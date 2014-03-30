@@ -3,8 +3,8 @@ Contributors: bobbingwide, Andy_P, pozhonks
 Donate link: http://www.oik-plugins.com/oik/oik-donate/
 Tags: woocommerce, commerce, ecommerce, shipping, weight, country, shop
 Requires at least: 3.7.1
-Tested up to: 3.9-beta2
-Stable tag: 1.0.3
+Tested up to: 3.9-beta3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,6 +72,9 @@ Yes.
 2. Weight and Country shipping settings part two
 
 == Upgrade Notice ==
+= 1.0.4 =
+Upgrade to resolve errors from missing bw_trace2() and bw_backtrace().
+ 
 = 1.0.3 =
 Required for WooCommerce 2.1 and above. Tested with WooCommerce 2.0 and WooCommerce 2.1, up to WooCommerce 2.1.6.
 
@@ -79,6 +82,9 @@ Required for WooCommerce 2.1 and above. Tested with WooCommerce 2.0 and WooComme
 Required for WooCommerce 2.1 and above. 
 
 == Changelog ==
+= 1.0.4 =
+* Fixed: Removed calls to trace functions: bw_trace2() and bw_backtrace().
+
 = 1.0.3 =
 * New: New version for delivery from oik-plugins.co.uk
 * Changed: Removed some links.

@@ -3,8 +3,8 @@
 * Donate link: http://www.oik-plugins.com/oik/oik-donate/
 * Tags: woocommerce, commerce, ecommerce, shipping, weight, country, shop
 * Requires at least: 3.7.1
-* Tested up to: 3.9-beta2
-* Stable tag: 1.0.3
+* Tested up to: 3.9-beta3
+* Stable tag: 1.0.4
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,7 +36,7 @@ set the shipping costs on a per-country basis.
 
 After installation activate this shipping method.
 
-Go to WooCommerce->settings->shipping select  Weight/Country Shipping and tick enable box.
+Go to WooCommerce->Settings->Shipping select  Weight/Country Shipping and tick enable box.
 
 Rates are set based on "Country Groups".
 Country Groups are groups of countries (or a single country) that share same delivery rates.
@@ -44,7 +44,7 @@ Country Groups are groups of countries (or a single country) that share same del
 ## Installation 
 1. Upload 'oik-weightcountry-shipping' to the '/wp-content/plugins/' directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Set your delivery rates in WooCommerce->Settings-Shipping using the Weight/Country tab
+1. Set your delivery rates in WooCommerce->Settings->Shipping using the Weight/Country tab
 
 
 ## Frequently Asked Questions 
@@ -54,7 +54,7 @@ Tested with WooCommerce 2.0 and WooCommerce 2.1, up to WooCommerce 2.1.6.
 # Will it use my settings for AWD-weightcountry-shipping? 
 Yes.
 
-# How do I switch to oik-weightcountry-settings? 
+# How do I switch to oik-weightcountry-shipping? 
 
 1. Install oik-weightcountry-shipping plugin
 1. Activate oik-weightcountry-shipping
@@ -63,7 +63,7 @@ Yes.
 # How do I upgrade to WooCommerce 2.1.x? 
 
 1. Backup your site
-1. Switch to oik-weightcountry-settings
+1. Switch to oik-weightcountry-shipping
 1. Upgrade WooCommerce
 1. Test
 1. Take another backup
@@ -72,6 +72,9 @@ Yes.
 2. Weight and Country shipping settings part two
 
 ## Upgrade Notice 
+# 1.0.4 
+Upgrade to resolve errors from missing bw_trace2() and bw_backtrace().
+
 # 1.0.3 
 Required for WooCommerce 2.1 and above. Tested with WooCommerce 2.0 and WooCommerce 2.1, up to WooCommerce 2.1.6.
 
@@ -79,6 +82,9 @@ Required for WooCommerce 2.1 and above. Tested with WooCommerce 2.0 and WooComme
 Required for WooCommerce 2.1 and above.
 
 ## Changelog 
+# 1.0.4 
+* Fixed: Removed calls to trace functions: bw_trace2() and bw_backtrace().
+
 # 1.0.3 
 * New: New version for delivery from oik-plugins.co.uk
 * Changed: Removed some links.
