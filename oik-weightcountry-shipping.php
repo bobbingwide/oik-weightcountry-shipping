@@ -3,7 +3,7 @@
  * Plugin Name: oik Weight/Country Shipping
  * Plugin URI: http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping
  * Description: WooCommerce extension for Weight/Country shipping
- * Version: 1.0.4
+ * Version: 1.0.6
  * Author: bobbingwide
  * Author URI: http://www.bobbingwide.com
  * License: GPL2
@@ -28,7 +28,9 @@ add_action( 'plugins_loaded', 'init_oik_shipping', 0 );
 
 function init_oik_shipping() {
 
-	if ( ! class_exists( 'WC_Shipping_Method' ) ) return;
+	if ( !class_exists( 'WC_Shipping_Method' ) ) {
+    return;
+  }
 
 	class OIK_Shipping extends WC_Shipping_Method {
 
@@ -51,23 +53,22 @@ function init_oik_shipping() {
 
 			$this->enabled          = $this->get_option('enabled');
 			$this->title            = $this->get_option('title');
-            $this->availability     = 'specific';
+      $this->availability     = 'specific';
 			$this->country_group_no	= $this->get_option('country_group_no');
-            $this->countries 	    = $this->get_option('countries');
+      $this->countries 	    = $this->get_option('countries');
 			$this->type             = 'order';
 			$this->tax_status       = $this->get_option('tax_status');
 			$this->fee              = $this->get_option('fee');
 			$this->options			= isset( $this->settings['options'] ) ? $this->settings['options'] : '';
 			$this->options			= (array) explode( "\n", $this->options );
-
-            if (empty($this->countries)) {
-                $this->availability = $this->settings['availability'] = 'all';
-            }
+      if (empty($this->countries)) {
+        $this->availability = $this->settings['availability'] = 'all';
+      }
 		}
 
 		function init_form_fields() {
 
-            $woocommerce = function_exists('WC') ? WC() : $GLOBALS['woocommerce'];
+      $woocommerce = function_exists('WC') ? WC() : $GLOBALS['woocommerce'];
 
 			$this->form_fields = array(
 				'enabled'    => array(
@@ -131,15 +132,13 @@ function init_oik_shipping() {
     */
     function display_country_groups() {
 
-		$woocommerce = function_exists('WC') ? WC() : $GLOBALS['woocommerce'];
-		$shippingCountries = method_exists($woocommerce->countries, 'get_shipping_countries')
+	  	$woocommerce = function_exists('WC') ? WC() : $GLOBALS['woocommerce'];
+  		$shippingCountries = method_exists($woocommerce->countries, 'get_shipping_countries')
                                     ? $woocommerce->countries->get_shipping_countries()
                                     : $woocommerce->countries->countries;
-    //   echo prp($this->settings['countries1']);
-        $number = $this->country_group_no;
-        for($counter = 1; $number >= $counter; $counter++) {
-
-            $this->form_fields['countries'.$counter] =  array(
+      $number = $this->country_group_no;
+      for ( $counter = 1; $number >= $counter; $counter++ ) {
+        $this->form_fields['countries'.$counter] =  array(
                     'title'     => sprintf(__( 'Country Group %s', 'woocommerce' ), $counter),
                     'type'      => 'multiselect',
                     'class'     => 'chosen_select',
@@ -147,103 +146,112 @@ function init_oik_shipping() {
                     'default'   => '',
                     'options'   => $shippingCountries
             );
-        }
+      }
     }
 
+    /**
+     * Calculate shipping rates
+     * 
+     * @param array $package 
+     */
 		function calculate_shipping( $package = array() ) {
-			global $woocommerce;
-
-            $rates      = $this->get_rates_by_countrygroup($this->get_countrygroup($package));
-            $weight     = $woocommerce->cart->cart_contents_weight;
-            $final_rate = $this->pick_smallest_rate($rates, $weight);
-
-            if($final_rate === false) return false;
-
-            $taxable    = ($this->tax_status == 'taxable') ? true : false;
-
-            if($this->fee > 0 && $package['destination']['country']) $final_rate = $final_rate + $this->fee;
-
-                $rate = array(
-                'id'        => $this->id,
-                'label'     => $this->title,
-                'cost'      => $final_rate,
-                'taxes'     => '',
-                'calc_tax'  => 'per_order'
-                );
+	  	$woocommerce = function_exists('WC') ? WC() : $GLOBALS['woocommerce'];
+      $country_group = $this->get_countrygroup($package);
+      $rates = $this->get_rates_by_countrygroup( $country_group );
+      $weight     = $woocommerce->cart->cart_contents_weight;
+      $final_rate = $this->pick_smallest_rate($rates, $weight);
+      if ( $final_rate !== false) {
+        $taxable = ($this->tax_status == 'taxable') ? true : false;
+        if ( $this->fee > 0 && $package['destination']['country'] ) {
+          $final_rate += $this->fee;
+        }
+        $rate = array(
+             'id'        => $this->id,
+             'label'     => $this->title,
+             'cost'      => $final_rate,
+             'taxes'     => '',
+             'calc_tax'  => 'per_order'
+             );
 
         $this->add_rate( $rate );
+      }  
     }
 
-    /*
-    * Retrieves the number of country group for country selected by user on checkout
-    */
-    function get_countrygroup($package = array()) {
-        
-      $country_group = null;  
-
-            $counter = 1;
-
-            while( isset( $this->settings['countries'.$counter] )) {
-                if (in_array($package['destination']['country'], $this->settings['countries'.$counter]))
-                    $country_group = $counter;
-
-                $counter++;
-            }
-        return $country_group;
-    }
-
-    /*
-    * Retrieves all rates available for selected country group
-    */
-    function get_rates_by_countrygroup($country_group = null) {
-      $countrygroup_rate = null;
-
-        $rates = array();
-                if ( sizeof( $this->options ) > 0) foreach ( $this->options as $option => $value ) {
-
-                    $rate = preg_split( '~\s*\|\s*~', trim( $value ) );
-
-                    if ( sizeof( $rate ) !== 3 )  {
-                        continue;
-                    } else {
-                        $rates[] = $rate;
-
-                    }
-                }
-
-                foreach($rates as $key) {
-                    if($key[2] == $country_group) {
-                        $countrygroup_rate[] = $key;
-                    }
-                }
-        return $countrygroup_rate;
-    }
-
-    /*
-    * Picks the right rate from available rates based on cart weight
-    */
-    function pick_smallest_rate($rates,$weight) {
-
-    if($weight == 0) return 0; // no shipping for cart without weight
-
-        if( sizeof($rates) > 0) foreach($rates as $key => $value) {
-
-                if($weight <= $value[0]) {
-                    $postage[] = $value[1];
-                }
-                $postage_all_rates[] = $value[1];
+    /**
+     * Retrieve the number of the country group for the country selected by the user on checkout
+     *
+     * @param array $package - expected to contain ['destination']['country']
+     * @return integer - country group - which will be 0 if the country is not present in any of the defined country groups
+     * Country group 0 can be used to set up default rates
+     */
+    function get_countrygroup( $package = array() ) {
+      $country = $package['destination']['country'];
+      $numbers = $this->country_group_no;
+      $country_group = 0;
+      for ( $counter=1; $counter <= $numbers; $counter++ ) {
+        if ( is_array( $this->settings['countries'.$counter] )) {
+          if (in_array( $country, $this->settings['countries'.$counter])) {
+            $country_group = $counter;
+          }
         }
-
-        if(sizeof($postage) > 0) {
-            return min($postage);
-                } else {
-                if (sizeof($postage_all_rates) > 0) return max($postage_all_rates);
-                }
-        return false;
+      }  
+      return( $country_group );
     }
 
-  function etz($etz) {
-        
+    /**
+     * Retrieves all rates available for the selected country group
+     *
+     * @param integer $country_group 
+     * @return array $countrygroup_rate - the subset of options for the given country group returned in array form
+     */
+    function get_rates_by_countrygroup( $country_group = null ) {
+      $countrygroup_rate = array();
+      if ( sizeof( $this->options ) > 0) {
+        foreach ( $this->options as $option => $value ) {
+          $value = trim( $value );
+          $rate = explode( "|", $value );
+          if ( isset( $rate[2] ) && $rate[2] == $country_group ) {
+            $countrygroup_rate[] = $rate;
+          }
+        }
+      }  
+      return( $countrygroup_rate );
+    }
+
+    /**
+     * Picks the right rate from available rates based on cart weight
+     * 
+     * Return the lowest value for any rate where the weight value exceeds the given cart weight
+     * If there is no rate for the given cart weight then return the highest rate found
+     * @param array $rates
+     * @param string $weight 
+     * @return - rate - may be false if no rate can be determined
+     */
+    function pick_smallest_rate( $rates, $weight) {
+      $rate = false;
+      $postage = array();
+      $postage_all_rates = array();
+      if ( sizeof($rates) > 0) {
+        foreach ( $rates as $key => $value) {
+          if ( $weight <= $value[0] ) {
+            $postage[] = $value[1];
+          }
+          $postage_all_rates[] = $value[1];
+        }
+      }  
+      if ( sizeof($postage) > 0) {
+        $rate = min($postage);
+      } elseif ( sizeof( $postage_all_rates ) > 0 ) {
+        $rate = max($postage_all_rates);
+      }
+      return $rate;
+    }
+
+    /**
+     * Possibly redundant function
+     * @TODO - remove if that's the case
+     */
+    function etz($etz) {
         if(empty($etz) || !is_numeric($etz)) {
             return 0.00;
         }

@@ -3,8 +3,8 @@ Contributors: bobbingwide, Andy_P, pozhonks
 Donate link: http://www.oik-plugins.com/oik/oik-donate/
 Tags: woocommerce, commerce, ecommerce, shipping, weight, country, shop
 Requires at least: 3.7.1
-Tested up to: 3.9-beta3
-Stable tag: 1.0.4
+Tested up to: 3.9
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,12 @@ You can group countries that share same delivery costs (e.g. USA and Canada, Eur
 set the shipping costs on a per-country basis. 
 
 = Features =
+New in version 1.0.5
+
+* Supports carts with zero weight
+* Supports default rates when Country is not listed in a country group
+
+In version 1.0.4
 
 * Set multiple shipping rates based on cart weight and delivery country
 * Group countries sharing same rates and set rates once for all of them
@@ -26,11 +32,13 @@ set the shipping costs on a per-country basis.
 * Works with WooCommmerce 2.0 and 2.1
 * Works on WPMS
 
-= Limitations =
+= Known Limitations =
 
 * English language only
 * Requires Countries to have been added to the Specific Countries list, if your Selling Location(s) option is to 'Sell to specific countries only'
-  
+* Calculates charges based on the total cart weight; it doesn't pay any attention to shipping classes or product categories
+* Doesn't support different charges to state or region
+* Doesn't take into account dimensions
 
 = Documentation =
 
@@ -72,6 +80,12 @@ Yes.
 2. Weight and Country shipping settings part two
 
 == Upgrade Notice ==
+= 1.0.6 =
+Quick fix for sites where oik base plugin is loaded after oik-weightcountry-shipping
+
+= 1.0.5 =
+Tested with WooCommerce 2.1.7 and WordPress 3.9-RC1
+
 = 1.0.4 =
 Upgrade to resolve errors from missing bw_trace2() and bw_backtrace().
  
@@ -82,6 +96,14 @@ Required for WooCommerce 2.1 and above. Tested with WooCommerce 2.0 and WooComme
 Required for WooCommerce 2.1 and above. 
 
 == Changelog ==
+= 1.0.6 = 
+* Fixed: Remove dummy bw_trace2() and bw_backtrace() functions and calls.
+
+= 1.0.5 =
+* Changed: Calculates shipping charges for zero weight carts
+* Changed: Calculates charges for "any other country" using country group 0
+* Fixed: Should no longer produce Warning messages
+
 = 1.0.4 =
 * Fixed: Removed calls to trace functions: bw_trace2() and bw_backtrace().
 
