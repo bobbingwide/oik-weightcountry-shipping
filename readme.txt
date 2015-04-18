@@ -1,10 +1,10 @@
 === Weight/Country Shipping for WooCommerce ===
-Contributors: bobbingwide, Andy_P, pozhonks
+Contributors: bobbingwide, Andy_P, pozhonks, vsgloik
 Donate link: http://www.oik-plugins.com/oik/oik-donate/
 Tags: woocommerce, commerce, ecommerce, shipping, weight, country, shop
-Requires at least: 3.7.1
-Tested up to: 3.9
-Stable tag: 1.0.6
+Requires at least: 3.9
+Tested up to: 4.0
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -57,7 +57,7 @@ Country Groups are groups of countries (or a single country) that share same del
 
 == Frequently Asked Questions ==
 = Which version of WooCommerce does this work on? =
-Tested with WooCommerce 2.0 and WooCommerce 2.1, up to WooCommerce 2.1.6.
+Tested with WooCommerce 2.0, WooCommerce 2.1 up to WooCommerce 2.1.6, and WooCommerce 2.2.4
 
 = Will it use my settings for AWD-weightcountry-shipping? =
 Yes. 
@@ -68,18 +68,26 @@ Yes.
 1. Activate oik-weightcountry-shipping
 1. Deactivate AWD-weightcountry-shipping 
 
-= How do I upgrade to WooCommerce 2.1.x? =
+= How do I upgrade to WooCommerce 2.1.x or higher? =
 
 1. Backup your site
 1. Switch to oik-weightcountry-shipping
 1. Upgrade WooCommerce
 1. Test
 1. Take another backup
+
+= Are there any other FAQs? =
+
+Yes. See [oik weight/country shipping FAQS](http://www.oik-plugins.com/wordpress-plugins-from-oik-plugins/oik-weightcountry-shipping-faqs)
+
 == Screenshots ==
 1. Weight and Country shipping settings part one
 2. Weight and Country shipping settings part two
 
 == Upgrade Notice ==
+= 1.0.7 = 
+Tested with WordPress 4.0 and WooCommerce 2.2.4
+
 = 1.0.6 =
 Quick fix for sites where oik base plugin is loaded after oik-weightcountry-shipping
 
@@ -96,6 +104,12 @@ Required for WooCommerce 2.1 and above. Tested with WooCommerce 2.0 and WooComme
 Required for WooCommerce 2.1 and above. 
 
 == Changelog ==
+= 1.0.7 = 
+* Changed: Support blanks in the shipping rates table 
+* Changed: Set text domain to "oik-weightcountry-shipping" instead of "woocommerce". No language versions yet.
+* Changed: Added some docblocks for API documentation
+* Tested: With WordPress 4.0 and WooCommmerce 2.2.4
+
 = 1.0.6 = 
 * Fixed: Remove dummy bw_trace2() and bw_backtrace() functions and calls.
 
@@ -146,9 +160,17 @@ The oik-weightcountry-shipping plugin was developed from changes by pozhonks tha
 
 http://wordpress.org/support/topic/new-plugin-for-testing-for-woocommerce-21
 
+
+Jeriff Cheng has also produced a version using the changes by pozhonks
+
+http://wordpress.org/plugins/woocommerce-weight-country-based-shipping/
+
 An alternative plugin, which also takes dimensions and postcode/state into account, is available at:
 
 http://wordpress.org/plugins/woocommerce-apg-weight-and-postcodestatecountry-shipping/
+
+
+
 
 = Official WooCommerce extensions =
 These WooCommerce extensions may satisfy your requirements.
