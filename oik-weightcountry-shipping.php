@@ -3,7 +3,7 @@
  * Plugin Name: oik Weight/Country Shipping
  * Plugin URI: http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping
  * Description: WooCommerce extension for Weight/Country shipping
- * Version: 1.0.7
+ * Version: 1.0.8
  * Author: bobbingwide
  * Author URI: http://www.oik-plugins.com/author/bobbingwide
  * License: GPL2
@@ -121,7 +121,7 @@ function init_oik_shipping() {
 				'options'       => array(
 					'title'       => __( 'Shipping Rates', 'oik-weightcountry-shipping' ),
 					'type'        => 'textarea',
-					'description' => __( 'Set your weight based rates in ' . get_option( 'woocommerce_weight_unit' ) . ' for country groups (one per line). Example: <code>Max weight|Cost|country group number</code>. Example: <code>10|6.95|3</code>. For decimal, use a dot not a comma.', 'oik-weightcountry-shipping' ),
+					'description' => __( 'Set your weight based rates in ' . get_option( 'woocommerce_weight_unit' ) . ' for country groups (one per line). Syntax: Max weight|Cost|country group number. Example: 10|6.95|3. For decimal, use a dot not a comma.', 'oik-weightcountry-shipping' ),
 					'default'     => '',
 				),
 				'country_group_no' => array(
@@ -220,6 +220,9 @@ function init_oik_shipping() {
     /**
      * Retrieves all rates available for the selected country group
      *
+     * Now supports separators of '/' forward slash and ',' comma as well as vertical bar
+     * Also trims off blanks.
+     *
      * @param integer $country_group 
      * @return array $countrygroup_rate - the subset of options for the given country group returned in array form
      */
@@ -228,6 +231,7 @@ function init_oik_shipping() {
       if ( sizeof( $this->options ) > 0) {
         foreach ( $this->options as $option => $value ) {
           $value = trim( $value );
+          $value = str_replace( array( "/", "," ), "|", $value );
           $rate = explode( "|", $value );
           foreach ( $rate as $key => $val ) {
             $rate[$key] = trim( $val );

@@ -1,10 +1,10 @@
 === Weight/Country Shipping for WooCommerce ===
-Contributors: bobbingwide, Andy_P, pozhonks, vsgloik
+Contributors: bobbingwide, vsgloik, Andy_P, pozhonks
 Donate link: http://www.oik-plugins.com/oik/oik-donate/
 Tags: woocommerce, commerce, ecommerce, shipping, weight, country, shop
 Requires at least: 3.9
-Tested up to: 4.0
-Stable tag: 1.0.7
+Tested up to: 4.1
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -57,7 +57,7 @@ Country Groups are groups of countries (or a single country) that share same del
 
 == Frequently Asked Questions ==
 = Which version of WooCommerce does this work on? =
-Tested with WooCommerce 2.0, WooCommerce 2.1 up to WooCommerce 2.1.6, and WooCommerce 2.2.4
+Tested with WooCommerce 2.0, WooCommerce 2.1 up to WooCommerce 2.1.6, and WooCommerce 2.2.10
 
 = Will it use my settings for AWD-weightcountry-shipping? =
 Yes. 
@@ -76,6 +76,23 @@ Yes.
 1. Test
 1. Take another backup
 
+= What is the separator for the shipping rate table? = 
+
+You can use vertical bars, forward slashes or commas
+Blanks around values will be ignored
+`
+0|9.99|0
+1 | 92.99 | 0
+1 | 92.98 | 2
+100 | 93.97 | 2
+30|120.00|1
+0| 1.23 | 3
+1 / 1.24 / 3
+2 , 3.45 , 3
+
+`
+
+
 = Are there any other FAQs? =
 
 Yes. See [oik weight/country shipping FAQS](http://www.oik-plugins.com/wordpress-plugins-from-oik-plugins/oik-weightcountry-shipping-faqs)
@@ -83,8 +100,13 @@ Yes. See [oik weight/country shipping FAQS](http://www.oik-plugins.com/wordpress
 == Screenshots ==
 1. Weight and Country shipping settings part one
 2. Weight and Country shipping settings part two
+3. WooCommerce Checkout shipping rate
+4. Enable Shipping Debug Mode when modifying rates
 
 == Upgrade Notice ==
+= 1.0.8 = 
+Tested with WordPress 4.1 and WooCommerce up to 2.2.10
+
 = 1.0.7 = 
 Tested with WordPress 4.0 and WooCommerce 2.2.4
 
@@ -104,6 +126,10 @@ Required for WooCommerce 2.1 and above. Tested with WooCommerce 2.0 and WooComme
 Required for WooCommerce 2.1 and above. 
 
 == Changelog ==
+= 1.0.8 = 
+* Changed: Supports separator characters of |=vertical bar, /=forward slash and/or ,=comma in the shipping rates table
+* Tested: With WordPress 4.1 and WooCommerce 2.2.10 
+
 = 1.0.7 = 
 * Changed: Support blanks in the shipping rates table 
 * Changed: Set text domain to "oik-weightcountry-shipping" instead of "woocommerce". No language versions yet.
@@ -168,6 +194,10 @@ http://wordpress.org/plugins/woocommerce-weight-country-based-shipping/
 An alternative plugin, which also takes dimensions and postcode/state into account, is available at:
 
 http://wordpress.org/plugins/woocommerce-apg-weight-and-postcodestatecountry-shipping/
+
+Another one, by dangoodman
+
+https://wordpress.org/support/plugin/weight-based-shipping-for-woocommerce
 
 
 
