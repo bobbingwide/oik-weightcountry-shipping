@@ -18,6 +18,10 @@ You can group countries that share same delivery costs (e.g. USA and Canada, Eur
 set the shipping costs on a per-country basis.
 
 # Features 
+New in version 1.0.9
+
+* Set the Shipping Method Title per Rate
+
 New in version 1.0.5
 
 * Supports carts with zero weight
@@ -92,6 +96,22 @@ Blanks around values will be ignored
 
 `
 
+# How do I set the Method Title? 
+If you want to use a different title per rate then add this for each rate where the Method Title should be different from the default.
+`
+
+0|9.99|0 | Unknown destination - zero weight
+1 | 92.99 | 0 | Country group 0
+1 | 92.98 | 2
+100 | 93.97 | 2
+30|120.00|1
+0| 1.23 | 3
+1 / 1.24 / 3
+2 , 3.45 , 3 / CG3
+
+
+`
+
 
 # Are there any other FAQs? 
 
@@ -104,6 +124,9 @@ Yes. See [oik weight/country shipping FAQS](http://www.oik-plugins.com/wordpress
 4. Enable Shipping Debug Mode when modifying rates
 
 ## Upgrade Notice 
+# 1.0.9 
+Prototype version tested with WordPress 4.1 and WooCommerce 2.2.10
+
 # 1.0.8 
 Tested with WordPress 4.1 and WooCommerce up to 2.2.10
 
@@ -126,6 +149,9 @@ Required for WooCommerce 2.1 and above. Tested with WooCommerce 2.0 and WooComme
 Required for WooCommerce 2.1 and above.
 
 ## Changelog 
+# 1.0.9 
+* Changed: Supports optional setting of the Method Title on each line in the shipping rate table
+
 # 1.0.8 
 * Changed: Supports separator characters of |=vertical bar, /=forward slash and/or ,=comma in the shipping rates table
 * Tested: With WordPress 4.1 and WooCommerce 2.2.10

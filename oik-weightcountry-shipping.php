@@ -3,7 +3,7 @@
  * Plugin Name: oik Weight/Country Shipping
  * Plugin URI: http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping
  * Description: WooCommerce extension for Weight/Country shipping
- * Version: 1.0.8
+ * Version: 1.0.9
  * Author: bobbingwide
  * Author URI: http://www.oik-plugins.com/author/bobbingwide
  * License: GPL2
@@ -47,6 +47,13 @@ function init_oik_shipping() {
    */
 	class OIK_Shipping extends WC_Shipping_Method {
   
+  
+  	/**
+  	 * Titles for the selected country group
+  	 *
+  	 */
+  	public $countrygroup_title;
+  
     /**
      * Constructor for OIK_Shipping class
      *
@@ -83,6 +90,7 @@ function init_oik_shipping() {
       if (empty($this->countries)) {
         $this->availability = $this->settings['availability'] = 'all';
       }
+      $this->countrygroup_title = $this->title;
 		}
 
 		function init_form_fields() {
@@ -121,7 +129,7 @@ function init_oik_shipping() {
 				'options'       => array(
 					'title'       => __( 'Shipping Rates', 'oik-weightcountry-shipping' ),
 					'type'        => 'textarea',
-					'description' => __( 'Set your weight based rates in ' . get_option( 'woocommerce_weight_unit' ) . ' for country groups (one per line). Syntax: Max weight|Cost|country group number. Example: 10|6.95|3. For decimal, use a dot not a comma.', 'oik-weightcountry-shipping' ),
+					'description' => __( 'Set your weight based rates in ' . get_option( 'woocommerce_weight_unit' ) . ' for country groups (one per line). <br /> Syntax: Max weight|Cost|Country Group number|Method Title<br />Example: 10|6.95|3| <br />For decimal, use a dot not a comma.', 'oik-weightcountry-shipping' ),
 					'default'     => '',
 				),
 				'country_group_no' => array(
@@ -186,7 +194,7 @@ function init_oik_shipping() {
         }
         $rate = array(
              'id'        => $this->id,
-             'label'     => $this->title,
+             'label'     => $this->countrygroup_title,
              'cost'      => $final_rate,
              'taxes'     => '',
              'calc_tax'  => 'per_order'
@@ -238,43 +246,71 @@ function init_oik_shipping() {
           }
           if ( isset( $rate[2] ) && $rate[2] == $country_group ) {
             $countrygroup_rate[] = $rate;
+            $this->set_countrygroup_title( $rate );
           }
         }
       }  
       return( $countrygroup_rate );
     }
+    
+    /**
+     * Set the title for this country group rate
+     * 
+     * Note: This includes countrygroup 0 - any country not listed
+     * and shipping rate for zero weight carts;
+     * 
+     * @param array $rate - the current rate that we're going to use
+     */
+    function set_countrygroup_title( $rate ) {
+      if ( isset( $rate[3] ) ) {
+        $title = $rate[3];
+      } else {
+        $title = $this->title;
+      }
+      $this->countrygroup_title = $title;
+    }  
 
     /**
      * Picks the right rate from available rates based on cart weight
      * 
-     * Return the lowest value for any rate where the weight value exceeds the given cart weight
-     * If there is no rate for the given cart weight then return the highest rate found
-     * @param array $rates
-     * @param string $weight 
+     * Return the lowest value for any rate where the weight value exceeds the given cart weight.
+     * 
+     * If there is no rate for the given cart weight then return the highest rate found.
+     * 
+     * We also set the countrygroup title for the selected rate.  
+     * 
+     * @param array $rates - array of rates for the selected countrygroup
+     * @param string $weight - the cart weight 
      * @return - rate - may be false if no rate can be determined
      */
     function pick_smallest_rate( $rates, $weight) {
       $rate = false;
-      $postage = array();
-      $postage_all_rates = array();
-      if ( sizeof($rates) > 0) {
+      $max_rate = false;
+      if ( sizeof( $rates ) > 0) {
         foreach ( $rates as $key => $value) {
           if ( $weight <= $value[0] ) {
-            $postage[] = $value[1];
+            if ( !$rate || $value[1] < $rate ) {
+              $rate = $value[1];
+              $this->set_countrygroup_title( $value );
+            }   
           }
-          $postage_all_rates[] = $value[1];
+          if ( !$rate ) {
+            if ( !$max_rate || $value[1] > $max_rate ) {
+              $max_rate = $value[1];
+              $this->set_countrygroup_title( $value );
+            }
+          }   
         }
-      }  
-      if ( sizeof($postage) > 0) {
-        $rate = min($postage);
-      } elseif ( sizeof( $postage_all_rates ) > 0 ) {
-        $rate = max($postage_all_rates);
       }
+      if ( !$rate ) {
+        $rate = $max_rate;
+      }  
       return $rate;
     }
 
     /**
      * Possibly redundant function
+     * 
      * @TODO - remove if that's the case
      */
     function etz($etz) {
@@ -284,7 +320,8 @@ function init_oik_shipping() {
     }
     
     /**
-     *   For help and how to use go <a href="http://www.andyswebdesign.ie/blog/free-woocommerce-weight-and-country-based-shipping-extension-plugin/" target="_blank">here</a>', 'oik-weightcountry-shipping'); 
+     * Display Weight/Country shipping options
+     * 
      */
     public function admin_options() {
 
