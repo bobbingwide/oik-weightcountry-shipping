@@ -4,7 +4,7 @@
 * Tags: woocommerce, commerce, ecommerce, shipping, weight, country, shop
 * Requires at least: 3.9
 * Tested up to: 4.2.2
-* Stable tag: 1.2
+* Stable tag: 1.3
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,7 @@ You can group countries that share same delivery costs (e.g. USA and Canada, Eur
 set the shipping costs on a per-country basis.
 
 # Features 
+
 New in version 1.2
 
 * Ability to set zero cost shipping for certain weight ranges
@@ -129,6 +130,8 @@ and [Multi rate weight/country shipping for WooCommerce FAQ's](http://www.oik-pl
 4. Enable Shipping Debug Mode when modifying rates
 
 ## Upgrade Notice 
+# 1.3 
+Upgrade to v1.3 if you get Notices due to missing Method title in rate line
 
 # 1.2 
 Upgrade if v1.1 caused Fatal errors or if you want to set zero cost shipping for certain weight bands
@@ -161,6 +164,8 @@ Required for WooCommerce 2.1 and above. Tested with WooCommerce 2.0 and WooComme
 Required for WooCommerce 2.1 and above.
 
 ## Changelog 
+# 1.3 
+* Fixed: Notice: Undefined offset from line 331
 
 # 1.2 
 * Fixed: Responds to 'woocommerce_init' rather than 'init'
