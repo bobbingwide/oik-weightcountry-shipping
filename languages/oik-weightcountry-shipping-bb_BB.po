@@ -1,0 +1,133 @@
+# Copyright (C) 2015 oik Weight/Country Shipping
+# This file is distributed under the same license as the oik Weight/Country Shipping package.
+msgid ""
+msgstr ""
+"Project-Id-Version: oik Weight/Country Shipping 1.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/oik-weightcountry-shipping\n"
+"POT-Creation-Date: 2015-05-11 20:42:33+00:00\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"Language: bb_BB\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+#: oik-weightcountry-shipping.php:63
+msgid "Weight/Country"
+msgstr "Weihgt/Cuornty"
+
+#: oik-weightcountry-shipping.php:65
+msgid "Weight and country based shipping"
+msgstr "Whiget And crotuny bsaed sppniihg"
+
+#: oik-weightcountry-shipping.php:66
+msgid "Define shipping by weight and country"
+msgstr "Dfneie shpinipg by weghit And cnutory"
+
+#: oik-weightcountry-shipping.php:100
+msgid "Enable/Disable"
+msgstr "Ebanle/Dsilabe"
+
+#: oik-weightcountry-shipping.php:102
+msgid "Enable this shipping method"
+msgstr "Elbnae this spiinphg mthoed"
+
+#: oik-weightcountry-shipping.php:106
+msgid "Method Title"
+msgstr "Moehtd Ttlie"
+
+#: oik-weightcountry-shipping.php:108
+msgid "This controls the title which the user sees during checkout."
+msgstr "This ctnolros thE tltie wchih thE uesr sees dinrug chokecut."
+
+#: oik-weightcountry-shipping.php:109
+msgid "Regular Shipping"
+msgstr "Rgluear Shpniipg"
+
+#: oik-weightcountry-shipping.php:112
+msgid "Tax Status"
+msgstr "TAx Satuts"
+
+#: oik-weightcountry-shipping.php:117
+msgid "Taxable"
+msgstr "Taxalbe"
+
+#: oik-weightcountry-shipping.php:118
+msgid "None"
+msgstr "Nnoe"
+
+#: oik-weightcountry-shipping.php:122
+msgid "Handling Fee"
+msgstr "Hniadlng FEE"
+
+#: oik-weightcountry-shipping.php:124
+msgid "Fee excluding tax, e.g. 3.50. Leave blank to disable."
+msgstr "FEE encdiulxg tAx, E.g. 3.50. Lveae balnk tO dlaibse."
+
+#: oik-weightcountry-shipping.php:128
+msgid "Shipping Rates"
+msgstr "Sppiihng Retas"
+
+#: oik-weightcountry-shipping.php:130
+msgid ""
+"Set your weight based rates in %1$s for country groups (one per line). <br /"
+"> Syntax: Max weight|Cost|Country Group number|Method Title<br />Example: 10|"
+"6.95|3| <br />For decimal, use a dot not a comma."
+msgstr ""
+"SEt yuor wihget bsaed rtaes In %1$s fOr crnotuy gurops (OnE pEr line). <br /"
+"> Stanyx: MAx wieght|Csot|Crutony Gourp neumbr|Mehotd Title<br />Example: 10|"
+"6.95|3| <br />For dceimal, UsE A dOt nOt A cmmoa."
+
+#: oik-weightcountry-shipping.php:134
+msgid "Number of country groups"
+msgstr "Nmuber Of cnutory gruops"
+
+#: oik-weightcountry-shipping.php:136
+msgid ""
+"Number of groups of countries sharing delivery rates (hit \"Save changes\" "
+"button after you have changed this setting)."
+msgstr ""
+"Nmuebr Of gropus Of cuentiors shrnaig dlvierey rteas (hIt \"Svae cneahgs\" "
+"bouttn aeftr yOU hvae cgenahd this sntteig)."
+
+#: oik-weightcountry-shipping.php:155
+msgid "Country Group %s"
+msgstr "Cnoruty Gurop %s"
+
+#: oik-weightcountry-shipping.php:315
+msgid "Weight and Country based shipping"
+msgstr "Weihgt And Counrty baesd sinphpig"
+
+#: oik-weightcountry-shipping.php:316
+msgid "Lets you calculate shipping based on Country and weight of the cart."
+msgstr "Lets yOU clcataule snhppiig besad On Crtunoy And wihegt Of thE crat."
+
+#: oik-weightcountry-shipping.php:317
+msgid ""
+"Lets you set unlimited weight bands on per country basis and group countries "
+"that share same delivery cost/bands."
+msgstr ""
+"Ltes yOU sEt ulntemiid whgiet badns On pEr cuornty bsias And gruop ctniuroes "
+"taht sarhe smae deleirvy csot/bands."
+
+#. Plugin Name of the plugin/theme
+msgid "oik Weight/Country Shipping"
+msgstr "OIk Whiget/Cronuty Sphpinig"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping"
+msgstr "http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping"
+
+#. Description of the plugin/theme
+msgid "WooCommerce extension for Weight/Country shipping"
+msgstr "WmooCeorcme enesoixtn fOr Wihegt/Cotrnuy snpiihpg"
+
+#. Author of the plugin/theme
+msgid "bobbingwide"
+msgstr "bbioibwngde"
+
+#. Author URI of the plugin/theme
+msgid "http://www.oik-plugins.com/author/bobbingwide"
+msgstr "http://www.oik-plugins.com/author/bobbingwide"
+

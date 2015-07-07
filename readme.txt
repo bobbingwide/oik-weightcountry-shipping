@@ -3,8 +3,8 @@ Contributors: bobbingwide, vsgloik, Andy_P, pozhonks
 Donate link: http://www.oik-plugins.com/oik/oik-donate/
 Tags: woocommerce, commerce, ecommerce, shipping, weight, country, shop
 Requires at least: 3.9
-Tested up to: 4.1
-Stable tag: 1.0.8
+Tested up to: 4.2.2
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,11 @@ You can group countries that share same delivery costs (e.g. USA and Canada, Eur
 set the shipping costs on a per-country basis. 
 
 = Features =
+New in version 1.1
+
+* Enabled for localization in your language.
+* Tested with WooCommerce 2.3.8
+
 New in version 1.0.9 
 
 * Set the Shipping Method Title per Rate
@@ -38,7 +43,7 @@ In version 1.0.4
 
 = Known Limitations =
 
-* English language only
+* English language only... until it's been translated
 * Requires Countries to have been added to the Specific Countries list, if your Selling Location(s) option is to 'Sell to specific countries only'
 * Calculates charges based on the total cart weight; it doesn't pay any attention to shipping classes or product categories
 * Doesn't support different charges to state or region
@@ -61,7 +66,7 @@ Country Groups are groups of countries (or a single country) that share same del
 
 == Frequently Asked Questions ==
 = Which version of WooCommerce does this work on? =
-Tested with WooCommerce 2.0, WooCommerce 2.1 up to WooCommerce 2.1.6, and WooCommerce 2.2.10
+Tested with WooCommerce 2.0 up to WooCommerce 2.3.8
 
 = Will it use my settings for AWD-weightcountry-shipping? =
 Yes. 
@@ -99,7 +104,6 @@ Blanks around values will be ignored
 = How do I set the Method Title? = 
 If you want to use a different title per rate then add this for each rate where the Method Title should be different from the default. 
 `
-
 0|9.99|0 | Unknown destination - zero weight
 1 | 92.99 | 0 | Country group 0
 1 | 92.98 | 2
@@ -108,7 +112,6 @@ If you want to use a different title per rate then add this for each rate where 
 0| 1.23 | 3
 1 / 1.24 / 3
 2 , 3.45 , 3 / CG3 
-
 
 `
 
@@ -124,6 +127,9 @@ Yes. See [oik weight/country shipping FAQS](http://www.oik-plugins.com/wordpress
 4. Enable Shipping Debug Mode when modifying rates
 
 == Upgrade Notice ==
+= 1.1 =
+First version ready for localization. Sample bbboing language supported ( locale bb_BB )
+
 = 1.0.9 =
 Prototype version tested with WordPress 4.1 and WooCommerce 2.2.10 
 
@@ -149,6 +155,10 @@ Required for WooCommerce 2.1 and above. Tested with WooCommerce 2.0 and WooComme
 Required for WooCommerce 2.1 and above. 
 
 == Changelog ==
+= 1.1 =
+* Added: Responds to 'init' to load language versions and initialise the logic
+* Added: Sample language files for the bbboing language ( locale bb_BB )
+ 
 = 1.0.9 =
 * Changed: Supports optional setting of the Method Title on each line in the shipping rate table
 
@@ -239,5 +249,6 @@ These WooCommerce extensions may satisfy your requirements.
 Or you may find other Premium plugins
 
 * http://bolderelements.net/plugins/table-rate-shipping-for-woocommerce/
+* http://plugins.leewillis.co.uk/doc_post/destination-weight-shipping-woocommerce/
 
 
