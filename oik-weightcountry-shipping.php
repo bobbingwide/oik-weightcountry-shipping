@@ -3,7 +3,7 @@
  * Plugin Name: oik Weight/Country Shipping
  * Plugin URI: http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping
  * Description: WooCommerce extension for Weight/Country shipping
- * Version: 1.1
+ * Version: 1.2
  * Author: bobbingwide
  * Author URI: http://www.oik-plugins.com/author/bobbingwide
  * License: GPL2
@@ -171,8 +171,10 @@ function init_oik_shipping() {
 	  	$woocommerce = function_exists('WC') ? WC() : $GLOBALS['woocommerce'];
       $country_group = $this->get_countrygroup($package);
       $rates = $this->get_rates_by_countrygroup( $country_group );
-      $weight     = $woocommerce->cart->cart_contents_weight;
-      $final_rate = $this->pick_smallest_rate($rates, $weight);
+			//bw_trace2( $rates, "rates" );
+      $weight = $woocommerce->cart->cart_contents_weight;
+			//bw_trace2( $weight, "cart contents weight" );
+      $final_rate = $this->pick_smallest_rate( $rates, $weight );
       if ( $final_rate !== false) {
         $taxable = ($this->tax_status == 'taxable') ? true : false;
         if ( $this->fee > 0 && $package['destination']['country'] ) {
@@ -248,6 +250,7 @@ function init_oik_shipping() {
      * @param array $rate - the current rate that we're going to use
      */
     function set_countrygroup_title( $rate ) {
+		  //bw_trace2();
       if ( isset( $rate[3] ) ) {
         $title = $rate[3];
       } else {
@@ -259,28 +262,44 @@ function init_oik_shipping() {
     /**
      * Picks the right rate from available rates based on cart weight
      * 
-     * Return the lowest value for any rate where the weight value exceeds the given cart weight.
-     * 
-     * If there is no rate for the given cart weight then return the highest rate found.
-     * 
+		 * If you want to set a weight at which shipping is free
+		 * then set a rate for the weight at the limit, and another way above the limit to 0
+		 *
+		 * e.g.
+		 * `
+		 * 50|100.00| 1 | Not free up to and including 50
+		 * 999|0.00| 1 | Free above 50, up to 999
+     * `
+		 * If the weight is above this highest value then the most expensive rate is chosen.
+		 * This is rather silly logic... but it'll do for the moment.
+		 * 
      * We also set the countrygroup title for the selected rate.  
      * 
      * @param array $rates - array of rates for the selected countrygroup
      * @param string $weight - the cart weight 
      * @return - rate - may be false if no rate can be determined
      */
-    function pick_smallest_rate( $rates, $weight) {
-      $rate = false;
+    function pick_smallest_rate( $rates_array, $weight) {
+      $rate = null;
       $max_rate = false;
-      if ( sizeof( $rates ) > 0) {
+			$found_weight = -1;
+			$found = false;
+			
+			
+      if ( sizeof( $rates_array ) > 0) {
+			  $rates = $this->sort_ascending( $rates_array );
+				//bw_trace2( $rates, "rates" );
         foreach ( $rates as $key => $value) {
-          if ( $weight <= $value[0] ) {
-            if ( !$rate || $value[1] < $rate ) {
+          if ( $weight <= $value[0] && ( $found_weight < $weight ) ) {
+            if ( true || null === $rate || $value[1] < $rate ) {
               $rate = $value[1];
+						  //bw_trace2( $rate, "rate is now", false );
+							$found_weight = $value[0];
+							$found = true;
               $this->set_countrygroup_title( $value );
             }   
           }
-          if ( !$rate ) {
+          if ( !$found  ) {
             if ( !$max_rate || $value[1] > $max_rate ) {
               $max_rate = $value[1];
               $this->set_countrygroup_title( $value );
@@ -288,12 +307,40 @@ function init_oik_shipping() {
           }   
         }
       }
-      if ( !$rate ) {
+      if ( null === $rate ) {
         $rate = $max_rate;
+				//$rate = false;
       }  
       return $rate;
     }
-
+		
+		/**
+		 * Sort the rates array by ascending weight
+		 *
+		 * @param array $rates_array array of rates
+		 * @return array sorted by ascending weight. 
+		 */
+		function sort_ascending( $rates_array ) {
+		  $weights = array();
+			$rates = array();
+			//$group = array();
+			$labels = array();
+			foreach ( $rates_array as $key => $value ) {
+			  $weights[ $key ] = $value[0];
+        $rates[ $key ] = $value[1];
+				$labels[ $key ] = $value[3];
+			}
+			//bw_trace2();
+			array_multisort( $weights, SORT_ASC, SORT_NUMERIC, $rates, $labels );
+			//bw_trace2( $weights, "weights", false );
+			//bw_trace2( $rates, "weights", false );
+			//bw_trace2( $labels, "labels", false );
+			foreach ( $weights as $key => $value ) {
+			  $new_array[] = array( $value, $rates[ $key ], null, $labels[ $key ] ); 
+			} 
+			return( $new_array );
+		}
+		
     /**
      * Possibly redundant function
      * 
@@ -331,6 +378,9 @@ function init_oik_shipping() {
   
 /**
  * Implement 'woocommerce_shipping_methods' filter for oik-weightcountry-shipping
+ *
+ * @param array $methods array of shipping method classes
+ * @return array array with "OIK_shipping" included
  */  
 function add_oik_shipping( $methods ) {
 	$methods[] = 'OIK_Shipping';
@@ -338,19 +388,21 @@ function add_oik_shipping( $methods ) {
 }
 
 /**
- * Implement 'init' to load l10n versions and then initialise weight/country shipping
+ * Implement 'woocommerce_init' to load l10n versions and then initialise weight/country shipping
  * 
  */
 function init_oik_weightcountry_l10n() {
 	load_plugin_textdomain( "oik-weightcountry-shipping", false, 'oik-weightcountry-shipping/languages' );
 	init_oik_shipping();
 }
- 
-	
 	
 //add_action( 'plugins_loaded', 'init_oik_shipping', 0 );
-
 add_filter( 'woocommerce_shipping_methods', 'add_oik_shipping' );
-add_action( 'init', 'init_oik_weightcountry_l10n' );
+add_action( 'woocommerce_init', 'init_oik_weightcountry_l10n' );
+
+if ( !function_exists( "bw_trace2" ) ) {
+  function bw_trace2() {}
+	function bw_backtrace() {}
+}
 
 
