@@ -3,7 +3,7 @@
  * Plugin Name: oik Weight/Country Shipping
  * Plugin URI: http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping
  * Description: WooCommerce extension for Weight/Country shipping
- * Version: 1.3
+ * Version: 1.3.1
  * Author: bobbingwide
  * Author URI: http://www.oik-plugins.com/author/bobbingwide
  * License: GPL2
@@ -175,7 +175,8 @@ function init_oik_shipping() {
       $weight = $woocommerce->cart->cart_contents_weight;
 			//bw_trace2( $weight, "cart contents weight" );
       $final_rate = $this->pick_smallest_rate( $rates, $weight );
-      if ( $final_rate !== false) {
+			
+      if ( $final_rate !== false && is_numeric( $final_rate )) {
         $taxable = ($this->tax_status == 'taxable') ? true : false;
         if ( $this->fee > 0 && $package['destination']['country'] ) {
           $final_rate += $this->fee;
@@ -189,7 +190,9 @@ function init_oik_shipping() {
              );
 
         $this->add_rate( $rate );
-      }  
+      } else {
+				add_filter( "woocommerce_cart_no_shipping_available_html", array( $this, 'no_shipping_available') );
+			}	
     }
 
     /**
@@ -254,7 +257,7 @@ function init_oik_shipping() {
      */
     function set_countrygroup_title( $rate ) {
 		  //bw_trace2();
-      if ( isset( $rate[3] ) && $rate[3] != "" ) {
+      if ( isset( $rate[3] ) ) {
         $title = $rate[3];
       } else {
         $title = $this->title;
@@ -272,7 +275,9 @@ function init_oik_shipping() {
 		 * `
 		 * 50|100.00| 1 | Not free up to and including 50
 		 * 999|0.00| 1 | Free above 50, up to 999
+		 * 1000| X | 1 | Maximum weight supported is 999
      * `
+		 * 
 		 * If the weight is above this highest value then the most expensive rate is chosen.
 		 * This is rather silly logic... but it'll do for the moment.
 		 * 
@@ -344,22 +349,24 @@ function init_oik_shipping() {
 			return( $new_array );
 		}
 		
-    /**
-     * Possibly redundant function
-     * 
-     * @TODO - remove if that's the case
-     */
-    function etz($etz) {
-        if(empty($etz) || !is_numeric($etz)) {
-            return 0.00;
-        }
-    }
+		/**
+		 * Implement "woocommerce_cart_no_shipping_available_html" 
+		 *
+		 * @param string $html message to be displayed when there are no shipping methods available
+		 * @return string Updated with our own version taken from the rates if the default has been overridden
+		 */
+		function no_shipping_available( $html ) {
+			if ( $this->countrygroup_title && $this->countrygroup_title != $this->title ) {
+				$html = $this->countrygroup_title;
+			}
+			return( $html );
+		}
     
-    /**
-     * Display Weight/Country shipping options
-     * 
-     */
-    public function admin_options() {
+		/**
+		 * Display Weight/Country shipping options
+		 * 
+		 */
+		public function admin_options() {
 
     	?>
     	<h3><?php _e('Weight and Country based shipping', 'oik-weightcountry-shipping'); ?></h3>
@@ -375,7 +382,7 @@ function init_oik_shipping() {
     	<?php
     }
 
-  } // end OIK_Shipping
+	} // end OIK_Shipping
 }
 
   

@@ -3,8 +3,8 @@
 * Donate link: http://www.oik-plugins.com/oik/oik-donate/
 * Tags: woocommerce, commerce, ecommerce, shipping, weight, country, shop
 * Requires at least: 3.9
-* Tested up to: 4.2.2
-* Stable tag: 1.3
+* Tested up to: 4.3.1
+* Stable tag: 1.3.1
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,10 @@ You can group countries that share same delivery costs (e.g. USA and Canada, Eur
 set the shipping costs on a per-country basis.
 
 # Features 
+New in version 1.3.1
+
+* Support for maximum cart weight
+* French language version
 
 New in version 1.2
 
@@ -49,11 +53,12 @@ In version 1.0.4
 
 # Known Limitations 
 
-* English language only... until it's been translated
 * Requires Countries to have been added to the Specific Countries list, if your Selling Location(s) option is to 'Sell to specific countries only'
 * Calculates charges based on the total cart weight; it doesn't pay any attention to shipping classes or product categories
 * Doesn't support different charges to state or region
 * Doesn't take into account dimensions
+* Only returns one shipping rate per weight/country group combination.
+* For multiple shipping rates upgrade to [Multi rate weight/country shipping for WooCommerce plugin](http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping-pro/)
 
 # Documentation 
 
@@ -73,7 +78,7 @@ Country Groups are groups of countries (or a single country) that share same del
 ## Frequently Asked Questions 
 # Which version of WooCommerce does this work on? 
 
-Tested with WooCommerce 2.0 up to WooCommerce 2.3.11
+Tested with WooCommerce 2.0 up to WooCommerce 2.4.7
 
 # What is the separator for the shipping rate table? 
 
@@ -130,6 +135,9 @@ and [Multi rate weight/country shipping for WooCommerce FAQ's](http://www.oik-pl
 4. Enable Shipping Debug Mode when modifying rates
 
 ## Upgrade Notice 
+# 1.3.1 
+Upgrade to v1.3.1 for support for maximum cart weight or to use the French language version.
+
 # 1.3 
 Upgrade to v1.3 if you get Notices due to missing Method title in rate line
 
@@ -164,6 +172,11 @@ Required for WooCommerce 2.1 and above. Tested with WooCommerce 2.0 and WooComme
 Required for WooCommerce 2.1 and above.
 
 ## Changelog 
+# 1.3.1 
+* Added: Support for maximum cart weight
+* Added: French language version. Props to R&eacute;my Perona and WooCommerce
+* Changed: Now using semantic version numbering
+
 # 1.3 
 * Fixed: Notice: Undefined offset from line 331
 
