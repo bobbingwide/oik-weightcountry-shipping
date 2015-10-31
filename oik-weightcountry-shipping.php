@@ -257,7 +257,7 @@ function init_oik_shipping() {
      */
     function set_countrygroup_title( $rate ) {
 		  //bw_trace2();
-      if ( isset( $rate[3] ) && $rate[3] != "" ) ) {
+      if ( isset( $rate[3] ) && $rate[3] != "" ) {
         $title = $rate[3];
       } else {
         $title = $this->title;
