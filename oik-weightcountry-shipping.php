@@ -3,7 +3,7 @@
  * Plugin Name: oik Weight/Country Shipping
  * Plugin URI: http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping
  * Description: WooCommerce extension for Weight/Country shipping
- * Version: 1.3.1
+ * Version: 1.3.2
  * Author: bobbingwide
  * Author URI: http://www.oik-plugins.com/author/bobbingwide
  * License: GPL2
@@ -411,7 +411,7 @@ add_filter( 'woocommerce_shipping_methods', 'add_oik_shipping' );
 add_action( 'woocommerce_init', 'init_oik_weightcountry_l10n' );
 
 if ( !function_exists( "bw_trace2" ) ) {
-  function bw_trace2() {}
+  function bw_trace2( $p=null ) { return $p; }
 	function bw_backtrace() {}
 }
 
