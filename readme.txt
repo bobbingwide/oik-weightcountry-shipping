@@ -3,8 +3,8 @@ Contributors: bobbingwide, vsgloik, Andy_P, pozhonks
 Donate link: http://www.oik-plugins.com/oik/oik-donate/
 Tags: woocommerce, commerce, ecommerce, shipping, weight, country, shop
 Requires at least: 3.9
-Tested up to: 4.3.1
-Stable tag: 1.3.1
+Tested up to: 4.4
+Stable tag: 1.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,7 +78,7 @@ Country Groups are groups of countries (or a single country) that share same del
 == Frequently Asked Questions ==
 = Which version of WooCommerce does this work on? =
 
-Tested with WooCommerce 2.0 up to WooCommerce 2.4.7
+Tested with WooCommerce 2.0 up to WooCommerce 2.4.11
 
 = What is the separator for the shipping rate table? = 
 
@@ -135,6 +135,9 @@ and [Multi rate weight/country shipping for WooCommerce FAQ's](http://www.oik-pl
 4. Enable Shipping Debug Mode when modifying rates
 
 == Upgrade Notice ==
+= 1.3.2 =
+Contains a fix for Issue #6. Now tested with WooCommerce 2.4.11
+
 = 1.3.1 = 
 Upgrade to v1.3.1 for support for maximum cart weight or to use the French language version.
 
@@ -172,6 +175,10 @@ Required for WooCommerce 2.1 and above. Tested with WooCommerce 2.0 and WooComme
 Required for WooCommerce 2.1 and above. 
 
 == Changelog ==
+= 1.3.2 = 
+* Fixed: Issue #6 - Correct dummy bw_trace2() function 
+* Tested: With WordPress 4.4 and WooCommerce 2.4.11
+
 = 1.3.1 = 
 * Added: Support for maximum cart weight
 * Added: French language version. Props to R&eacute;my Perona and WooCommerce
