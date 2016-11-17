@@ -96,6 +96,7 @@ The latest version has been tested with both WooCommerce 2.5.5 and WooCommerce 2
 
 You can use vertical bars, forward slashes or commas.
 Blanks around values will be ignored.
+
 `
 0|9.99|0
 1 | 92.99 | 0
@@ -110,6 +111,7 @@ Blanks around values will be ignored.
 
 # How do I set the Method Title? 
 If you want to use a different title per rate then add this for each rate where the Method Title should be different from the default.
+
 `
 0|9.99|0 | Unknown destination - zero weight
 1 | 92.99 | 0 | Country group 0
@@ -133,8 +135,8 @@ If you're still using WooCommerce 2.5 you'll need:
 
 * [Multi rate weight/country shipping for WooCommerce plugin](http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping-pro/)
 
-The Multi rate version supports multiple rates per weight/country combination
-e.g.
+The Multi rate version supports multiple rates per weight/country combination e.g.
+
 `
 100 | 1.23 | 1 | UK standard
 100 | 2.34 | 1 | UK premium
