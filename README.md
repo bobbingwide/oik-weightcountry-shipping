@@ -1,11 +1,11 @@
 # Weight/Country Shipping for WooCommerce 
 ![banner](https://raw.githubusercontent.com/bobbingwide/oik-weightcountry-shipping/master/assets/oik-weightcountry-shipping-banner-772x250.jpg)
 * Contributors: bobbingwide, vsgloik, Andy_P, pozhonks
-* Donate link: http://www.oik-plugins.com/oik/oik-donate/
+* Donate link: https://www.oik-plugins.com/oik/oik-donate/
 * Tags: woocommerce, commerce, ecommerce, shipping, weight, country, shop
 * Requires at least: 3.9
-* Tested up to: 4.7-beta4
-* Stable tag: 1.3.3
+* Tested up to: 4.7.3
+* Stable tag: 1.3.4
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,7 +69,12 @@ In version 1.0.4
 * Doesn't support different charges to state or region
 * Doesn't take into account dimensions
 * Only returns one shipping rate per weight/country group combination.
-* For multiple shipping rates upgrade to [Multi rate weight/country shipping for WooCommerce plugin](http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping-pro/)
+
+For multiple shipping rates upgrade to [Multi rate weight/country shipping for WooCommerce plugin](https://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping-pro/)
+
+For WooCommerce 2.6+ use either
+[Weight zone shipping for WooCommerce 2.6+](https://wordpress.org/plugins/oik-weight-zone-shipping/)
+or [Multi rate weight zone shipping for WooCommerce 2.6+](https://www.oik-plugins.com/oik-plugins/oik-weight-zone-shipping-pro/)
 
 # Documentation 
 
@@ -87,9 +92,14 @@ Country Groups are groups of countries (or a single country) that share same del
 
 
 ## Frequently Asked Questions 
+# Installation 
+1. Upload 'oik-weightcountry-shipping' to the '/wp-content/plugins/' directory
+1. Activate the plugin through the 'Plugins' menu in WordPress
+1. Set your delivery rates in WooCommerce->Settings->Shipping using the Weight/Country tab
+
 # Which version of WooCommerce does this work on? 
 
-The latest version has been tested with both WooCommerce 2.5.5 and WooCommerce 2.6.8
+The latest version has been tested with both WooCommerce 2.5.5, WooCommerce 2.6.14
 
 
 # What is the separator for the shipping rate table? 
@@ -129,11 +139,11 @@ If you want to use a different title per rate then add this for each rate where 
 If you have a requirement to offer multiple shipping rates then we recommend using WooCommerce 2.6 with
 
 * [Weight zone shipping for WooCommerce 2.6](https://wordpress.org/plugins/oik-weight-zone-shipping/) - defining multiple shipping methods
-* [Multi rate weight zone shipping for WooCommerce 2.6](http://www.oik-plugins.com/oik-plugins/oik-weight-zone-shipping-pro/)
+* [Multi rate weight zone shipping for WooCommerce 2.6](https://www.oik-plugins.com/oik-plugins/oik-weight-zone-shipping-pro/)
 
 If you're still using WooCommerce 2.5 you'll need:
 
-* [Multi rate weight/country shipping for WooCommerce plugin](http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping-pro/)
+* [Multi rate weight/country shipping for WooCommerce plugin](https://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping-pro/)
 
 The Multi rate version supports multiple rates per weight/country combination e.g.
 
@@ -145,8 +155,8 @@ The Multi rate version supports multiple rates per weight/country combination e.
 
 # Are there any other FAQs? 
 
-Yes. See [oik weight/country shipping FAQS](http://www.oik-plugins.com/wordpress-plugins-from-oik-plugins/oik-weightcountry-shipping-faqs)
-and [Multi rate weight/country shipping for WooCommerce FAQ's](http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping-pro/?oik-tab=faq)
+Yes. See [oik weight/country shipping FAQS](https://www.oik-plugins.com/wordpress-plugins-from-oik-plugins/oik-weightcountry-shipping-faqs)
+and [Multi rate weight/country shipping for WooCommerce FAQ's](https://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping-pro/?oik-tab=faq)
 
 ## Screenshots 
 1. Weight and Country shipping settings part one
@@ -155,6 +165,9 @@ and [Multi rate weight/country shipping for WooCommerce FAQ's](http://www.oik-pl
 4. Enable Shipping Debug Mode when modifying rates
 
 ## Upgrade Notice 
+# 1.3.4 
+Tested with WordPress 4.7.3, WooCommerce 2.6.14 and PHP 7.1
+
 # 1.3.3 
 Tested with WordPress 4.7 and WooCommerce 2.5.5 and 2.6.8.
 
@@ -198,6 +211,11 @@ Required for WooCommerce 2.1 and above. Tested with WooCommerce 2.0 and WooComme
 Required for WooCommerce 2.1 and above.
 
 ## Changelog 
+# 1.3.4 
+* Tested: With WordPress 4.7
+* Tested: With WooCommerce 2.6.14
+* Tested: With PHP 7.1
+
 # 1.3.3 
 * Tested: With WordPress 4.7 and WooCommerce 2.5 or 2.6
 * Added: Russian language version. Unverified.
@@ -254,7 +272,7 @@ Required for WooCommerce 2.1 and above.
 
 # 1.0.2b 
 * Version created by pozhonks.
-* See [New plugin for testing WooCommerce 2.1](http://wordpress.org/support/topic/new-plugin-for-testing-for-woocommerce-21)
+* See [New plugin for testing WooCommerce 2.1](https://wordpress.org/support/topic/new-plugin-for-testing-for-woocommerce-21)
 
 # 1.0.1 
 * Fixed a bug causing tax on shipping not being calculated
