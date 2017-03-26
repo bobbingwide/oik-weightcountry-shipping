@@ -1,126 +1,116 @@
-# Copyright (C) 2015 oik Weight/Country Shipping
-# This file is distributed under the same license as the oik Weight/Country Shipping package.
+# Translation of Plugins - Weight/Country Shipping for WooCommerce - Development (trunk) in French (France)
+# This file is distributed under the same license as the Plugins - Weight/Country Shipping for WooCommerce - Development (trunk) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: oik Weight/Country Shipping 1.3.1\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/oik-weightcountry-shipping\n"
-"POT-Creation-Date: 2015-10-10 10:50:18+00:00\n"
+"PO-Revision-Date: 2015-12-09 13:03:04+0000\n"
 "MIME-Version: 1.0\n"
-"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
-"Language: fr_FR\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-#: oik-weightcountry-shipping.php:63
-msgid "Weight/Country"
-msgstr "Poids/Pays"
-
-#: oik-weightcountry-shipping.php:65
-msgid "Weight and country based shipping"
-msgstr "Livraison basée sur le poids et le pays"
-
-#: oik-weightcountry-shipping.php:66
-msgid "Define shipping by weight and country"
-msgstr "Définir les frais de livraison par poids et par pays"
-
-#: oik-weightcountry-shipping.php:100
-msgid "Enable/Disable"
-msgstr "Activer/Désactiver"
-
-#: oik-weightcountry-shipping.php:102
-msgid "Enable this shipping method"
-msgstr "Active cette méthode de livraison"
-
-#: oik-weightcountry-shipping.php:106
-msgid "Method Title"
-msgstr "Titre de la méthode"
-
-#: oik-weightcountry-shipping.php:108
-msgid "This controls the title which the user sees during checkout."
-msgstr "Ceci contrôle le titre que l'utilisateur voit lors du paiement."
-
-#: oik-weightcountry-shipping.php:109
-msgid "Regular Shipping"
-msgstr "Livraison classique"
-
-#: oik-weightcountry-shipping.php:112
-msgid "Tax Status"
-msgstr "État de la TVA"
-
-#: oik-weightcountry-shipping.php:117
-msgid "Taxable"
-msgstr ""
-
-#: oik-weightcountry-shipping.php:118
-msgid "None"
-msgstr "Aucun"
-
-#: oik-weightcountry-shipping.php:122
-msgid "Handling Fee"
-msgstr "Frais de traitement"
-
-#: oik-weightcountry-shipping.php:124
-msgid "Fee excluding tax, e.g. 3.50. Leave blank to disable."
-msgstr "Frais excluant la TVA, par exemple 3.5. Laisser vide pour ignorer."
-
-#: oik-weightcountry-shipping.php:128
-msgid "Shipping Rates"
-msgstr "Frais de livraison"
-
-#: oik-weightcountry-shipping.php:130
-msgid ""
-"Set your weight based rates in %1$s for country groups (one per line). <br /"
-"> Syntax: Max weight|Cost|Country Group number|Method Title<br />Example: 10|"
-"6.95|3| <br />For decimal, use a dot not a comma."
-msgstr "Configurer vos frais de livraison au poids en %1$s groupes de pays (un par ligne). <br /> Syntaxe : Poids maximum|Prix|Numéro du groupe de pays|Titre de la méthode<br />Exemple : 10|6.95|3| <br />Pour les décimales, utilisez un point, pas une virgule."
-
-#: oik-weightcountry-shipping.php:134
-msgid "Number of country groups"
-msgstr "Nombre de groupes de pays"
-
-#: oik-weightcountry-shipping.php:136
-msgid ""
-"Number of groups of countries sharing delivery rates (hit \"Save changes\" "
-"button after you have changed this setting)."
-msgstr "Nombre de groupes de pays partageant les frais de livraison (appuyez sur \"Enregistrer les changements\" après avoir modifié ce réglage)."
-
-#: oik-weightcountry-shipping.php:155
-msgid "Country Group %s"
-msgstr "Groupe de pays %s"
-
-#: oik-weightcountry-shipping.php:372
-msgid "Weight and Country based shipping"
-msgstr "Livraison basée sur le poids et le pays"
-
-#: oik-weightcountry-shipping.php:373
-msgid "Lets you calculate shipping based on Country and weight of the cart."
-msgstr "Vous permet de calculer les frais de livraison en fonction du pays et du poids du panier."
-
-#: oik-weightcountry-shipping.php:374
-msgid ""
-"Lets you set unlimited weight bands on per country basis and group countries "
-"that share same delivery cost/bands."
-msgstr "Vous permet de définir un nombre illimité de règles de livraison en fonction du poids et du pays ou de groupes de pays qui partagent les même frais."
-
-#. Plugin Name of the plugin/theme
-msgid "oik Weight/Country Shipping"
-msgstr ""
-
-#. Plugin URI of the plugin/theme
-msgid "http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping"
-msgstr "http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping"
-
-#. Description of the plugin/theme
-msgid "WooCommerce extension for Weight/Country shipping"
-msgstr "Extension WooCommerce pour la livraison au poids/pays"
-
-#. Author of the plugin/theme
-msgid "bobbingwide"
-msgstr ""
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: fr\n"
+"Project-Id-Version: Plugins - Weight/Country Shipping for WooCommerce - Development (trunk)\n"
 
 #. Author URI of the plugin/theme
 msgid "http://www.oik-plugins.com/author/bobbingwide"
 msgstr "http://www.oik-plugins.com/author/bobbingwide"
 
+#. Author of the plugin/theme
+msgid "bobbingwide"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "WooCommerce extension for Weight/Country shipping"
+msgstr "Extension WooCommerce pour la livraison au poids/pays"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping"
+msgstr "http://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping"
+
+#. Plugin Name of the plugin/theme
+msgid "oik Weight/Country Shipping"
+msgstr ""
+
+#: oik-weightcountry-shipping.php:374
+msgid "Lets you set unlimited weight bands on per country basis and group countries that share same delivery cost/bands."
+msgstr "Vous permet de définir un nombre illimité de règles de livraison en fonction du poids et du pays ou de groupes de pays qui partagent les même frais."
+
+#: oik-weightcountry-shipping.php:373
+msgid "Lets you calculate shipping based on Country and weight of the cart."
+msgstr "Vous permet de calculer les frais de livraison en fonction du pays et du poids du panier."
+
+#: oik-weightcountry-shipping.php:372
+msgid "Weight and Country based shipping"
+msgstr "Livraison basée sur le poids et le pays"
+
+#: oik-weightcountry-shipping.php:155
+msgid "Country Group %s"
+msgstr "Groupe de pays %s"
+
+#: oik-weightcountry-shipping.php:136
+msgid "Number of groups of countries sharing delivery rates (hit \"Save changes\" button after you have changed this setting)."
+msgstr "Nombre de groupes de pays partageant les frais de livraison (appuyez sur \"Enregistrer les changements\" après avoir modifié ce réglage)."
+
+#: oik-weightcountry-shipping.php:134
+msgid "Number of country groups"
+msgstr "Nombre de groupes de pays"
+
+#: oik-weightcountry-shipping.php:130
+msgid "Set your weight based rates in %1$s for country groups (one per line). <br /> Syntax: Max weight|Cost|Country Group number|Method Title<br />Example: 10|6.95|3| <br />For decimal, use a dot not a comma."
+msgstr "Configurer vos frais de livraison au poids en %1$s groupes de pays (un par ligne). <br /> Syntaxe : Poids maximum|Prix|Numéro du groupe de pays|Titre de la méthode<br />Exemple : 10|6.95|3| <br />Pour les décimales, utilisez un point, pas une virgule."
+
+#: oik-weightcountry-shipping.php:128
+msgid "Shipping Rates"
+msgstr "Frais de livraison"
+
+#: oik-weightcountry-shipping.php:124
+msgid "Fee excluding tax, e.g. 3.50. Leave blank to disable."
+msgstr "Frais excluant la TVA, par exemple 3.5. Laisser vide pour ignorer."
+
+#: oik-weightcountry-shipping.php:122
+msgid "Handling Fee"
+msgstr "Frais de traitement"
+
+#: oik-weightcountry-shipping.php:118
+msgid "None"
+msgstr "Aucun(e)"
+
+#: oik-weightcountry-shipping.php:117
+msgid "Taxable"
+msgstr "Taxable"
+
+#: oik-weightcountry-shipping.php:112
+msgid "Tax Status"
+msgstr "Etat de la taxe"
+
+#: oik-weightcountry-shipping.php:109
+msgid "Regular Shipping"
+msgstr "Livraison classique"
+
+#: oik-weightcountry-shipping.php:108
+msgid "This controls the title which the user sees during checkout."
+msgstr "Ceci contrôle le titre que l'utilisateur voit lors du paiement."
+
+#: oik-weightcountry-shipping.php:106
+msgid "Method Title"
+msgstr "Nom du mode"
+
+#: oik-weightcountry-shipping.php:102
+msgid "Enable this shipping method"
+msgstr "Active cette méthode de livraison"
+
+#: oik-weightcountry-shipping.php:100
+msgid "Enable/Disable"
+msgstr "Activer/Désactiver"
+
+#: oik-weightcountry-shipping.php:66
+msgid "Define shipping by weight and country"
+msgstr "Définir les frais de livraison par poids et par pays"
+
+#: oik-weightcountry-shipping.php:65
+msgid "Weight and country based shipping"
+msgstr "Livraison basée sur le poids et le pays"
+
+#: oik-weightcountry-shipping.php:63
+msgid "Weight/Country"
+msgstr "Poids/Pays"
