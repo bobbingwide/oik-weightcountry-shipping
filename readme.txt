@@ -18,7 +18,7 @@ and you're still using WooCommerce 2.5 or earlier then this plugin is for you.
 You can group countries that share same delivery costs (e.g. USA and Canada, European Union countries, etc.) or 
 set the shipping costs on a per-country basis. 
 
-If you're using WooCommerce 2.6 you should use [Weight zone shipping for WooCommerce 2.6](https://wordpress.org/plugins/oik-weight-zone-shipping/) 
+If you're using WooCommerce 2.6 or 3.0 you should use [Weight zone shipping for WooCommerce](https://wordpress.org/plugins/oik-weight-zone-shipping/) 
 as this is integrated with Shipping Zones. 
 
 
@@ -71,9 +71,9 @@ In version 1.0.4
 
 For multiple shipping rates upgrade to [Multi rate weight/country shipping for WooCommerce plugin](https://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping-pro/)
 
-For WooCommerce 2.6+ use either
-[Weight zone shipping for WooCommerce 2.6+](https://wordpress.org/plugins/oik-weight-zone-shipping/)
-or [Multi rate weight zone shipping for WooCommerce 2.6+](https://www.oik-plugins.com/oik-plugins/oik-weight-zone-shipping-pro/)
+For WooCommerce 2.6 or 3.0 use either
+[Weight zone shipping for WooCommerce](https://wordpress.org/plugins/oik-weight-zone-shipping/)
+or [Multi rate weight zone shipping for WooCommerce](https://www.oik-plugins.com/oik-plugins/oik-weight-zone-shipping-pro/)
 
 = Documentation =
 
@@ -98,7 +98,7 @@ Country Groups are groups of countries (or a single country) that share same del
 
 = Which version of WooCommerce does this work on? =
 
-The latest version has been tested with both WooCommerce 2.5.5, WooCommerce 2.6.14
+The latest version has been tested with both WooCommerce 2.5.5, WooCommerce 2.6.14, and WooCommerce 3.0.0
 
 
 = What is the separator for the shipping rate table? = 
@@ -165,7 +165,7 @@ and [Multi rate weight/country shipping for WooCommerce FAQ's](https://www.oik-p
 
 == Upgrade Notice ==
 = 1.3.4 = 
-Tested with WordPress 4.7.3, WooCommerce 2.6.14 and PHP 7.1
+Tested with WordPress 4.7.3, WooCommerce 2.6.14 and WooCommerce 3.0 and PHP 7.1
 
 = 1.3.3 = 
 Tested with WordPress 4.7 and WooCommerce 2.5.5 and 2.6.8. 
@@ -211,12 +211,12 @@ Required for WooCommerce 2.1 and above.
 
 == Changelog ==
 = 1.3.4 = 
-* Tested: With WordPress 4.7 
-* Tested: With WooCommerce 2.6.14
+* Tested: With WordPress 4.7.3 
+* Tested: With WooCommerce 2.5, 2.6 and 3.0
 * Tested: With PHP 7.1
 
 = 1.3.3 = 
-* Tested: With WordPress 4.7 and WooCommerce 2.5 or 2.6
+* Tested: With WordPress 4.7 and WooCommerce 2.5 and 2.6
 * Added: Russian language version. Unverified.
 * Changed: Updated readme to point you to Weight zone shipping for WooCommerce 2.6 
 
