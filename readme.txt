@@ -4,13 +4,17 @@ Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: woocommerce, commerce, ecommerce, shipping, weight, country, shop
 Requires at least: 3.9
 Tested up to: 4.7.3
-Stable tag: 1.3.4
+Stable tag: 1.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Adds per-country and weight based shipping cost calculation method to your WooCommerce store.  
 
 == Description ==
+
+This plugin is no longer supported.
+Please switch to [oik-weight-zone-shipping](https://wordpress.org/plugins/oik-weight-zone-shipping)
+
 
 If your WooCommerce store needs to calculate shipping charges based on cart weight and country of delivery 
 and you're still using WooCommerce 2.5 or earlier then this plugin is for you.
@@ -164,6 +168,9 @@ and [Multi rate weight/country shipping for WooCommerce FAQ's](https://www.oik-p
 4. Enable Shipping Debug Mode when modifying rates
 
 == Upgrade Notice ==
+= 1.4.0 =
+This plugin is no longer supported. Please switch to oik-weight-zone-shipping.
+
 = 1.3.4 = 
 Tested with WordPress 4.7.3, WooCommerce 2.6.14 and WooCommerce 3.0 and PHP 7.1
 

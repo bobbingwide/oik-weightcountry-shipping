@@ -2,15 +2,15 @@
 /**
  * Plugin Name: oik Weight/Country Shipping
  * Plugin URI: https://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping
- * Description: WooCommerce extension for Weight/Country shipping
- * Version: 1.3.4
+ * Description: WooCommerce extension for Weight/Country shipping. No longer supported. Please switch to oik-weight-zone-shipping.
+ * Version: 1.4.0
  * Author: bobbingwide
  * Author URI: https://www.oik-plugins.com/author/bobbingwide
  * License: GPL2
  * Text Domain: oik-weightcountry-shipping
  * Domain Path: /languages/
  
-    Copyright Bobbing Wide 2014-2017 ( email : herb@bobbingwide.com ) 
+    Copyright Bobbing Wide 2014-2020 ( email : herb@bobbingwide.com )
     Copyright 2012 andyswebdesign.ie 
 
     This program is free software; you can redistribute it and/or modify
@@ -372,7 +372,12 @@ function init_oik_shipping() {
     	<h3><?php _e('Weight and Country based shipping', 'oik-weightcountry-shipping'); ?></h3>
     	<p><?php _e('Lets you calculate shipping based on Country and weight of the cart.', 'oik-weightcountry-shipping' ); ?>
       <br /><?php _e( 'Lets you set unlimited weight bands on per country basis and group countries that share same delivery cost/bands.', 'oik-weightcountry-shipping' ); ?>
-      </p>
+        </p>
+        <p><strong>
+                <?php _e( 'This plugin is no longer supported.'); ?>
+        </strong>
+            <?php printf( __( 'Please switch to %1$s','oik-weightcountry-shipping'), '<a href="https://wordpress.org/plugins/oik-weight-zone-shipping" target="_blank">oik-weight-zone-shipping</a>' ); ?>
+        </p>
     	<table class="form-table">
     	<?php
     		// Generate the HTML for the settings form.
