@@ -1,4 +1,4 @@
-<?php // (C) Copyright Bobbing Wide 2017
+<?php // (C) Copyright Bobbing Wide 2017-2020
 
 /**
  * @package oik-weightcountry-shipping
@@ -15,11 +15,29 @@ class Tests_calclate_shipping extends BW_UnitTestCase {
 	 * - WooCommerce test code
 	 * - neither oik-weight-zone-shipping nor oik-weight-zone-shipping-pro to be active. 
 	 * - Live data in the database must match what we've hard coded.
+	 *
+	 * Set these in WooCommerce / Settings / Shipping / Weight/Country
+	 *
+	 * Field     | Value
+	 * ---------------- | ---------
+	 * Shipping method | Enabled
+	 * Method Title | Regular Shipping
+	 * Tax Status | Taxable
+	 * Handling Fee | 1.23
+	 * Shippping Rates | See owcs.csv
+	 * Number of country groups | 4
+	 * Country Group 1 | UK, Portugal
+	 * Country Group 2 | France
+	 * Country Group 3 | Canada, US
+	 * Country Group 4 |
+	 *
+	 * Note: It doesn't really matter about the country groups so long as UK is in Country Group 1
 	 * 
-	 * @TODO We're using live data from qw/wordpress here. This is only just about good enough until we can generate it dynamically.
+	 * We're using live data from s.b/wordpress here.
+	 * This is only just about good enough until we can generate it dynamically.
 	 * WooCommerce WC_Helper_product isn't quite enough for our needs.
 	 */
-	function setUp() {
+	function setUp() :void  {
 		parent::setUp();
 		oik_require( "oik-weightcountry-shipping.php", "oik-weightcountry-shipping" );
 		if ( !class_exists( 'WC_Shipping_Method' ) ) {
@@ -27,7 +45,7 @@ class Tests_calclate_shipping extends BW_UnitTestCase {
 		} else {
 			//echo . PHP_EOL .  'good' . PHP_EOL;
 		}
-		oik_require( "tests/framework/helpers/class-wc-helper-product.php", "woocommerce" );
+		oik_require( "tests/legacy/framework/helpers/class-wc-helper-product.php", "woocommerce-source" );
 	}
 	
 	/**
@@ -69,7 +87,8 @@ class Tests_calclate_shipping extends BW_UnitTestCase {
     //WC()->cart->add_to_cart( 31631 /* $product->get_id(), 1 );
 		// Note: 31631 weighs 100gms
 		// 30114 weights 1 kg
-		WC()->cart->add_to_cart( 31631, 1 );
+		// In s.b the product is ID: 10499, Title: 100gm is 0.1 kilos
+		WC()->cart->add_to_cart( 10499, 1 );
 	}
 
 	/**

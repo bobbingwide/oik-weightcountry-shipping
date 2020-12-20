@@ -1,0 +1,46 @@
+0|9.99|0| zero weight to elsewhere
+1 | 92.99 | 0 | elsewhere
+2 | X | 0 | 
+1 | 92.98 | 2 | France
+100 | 93.97 | 2 | France
+100 | 93.98 | 2 | France alternative rate
+150|94.99 |2 | France
+150|95.00| 2 | France alternative rate
+151 | Z | 2 | Too heavy for France 
+0.1 / 3.65 , 1, UK shipping ( 0.1 ) 
+0.2 / 0.20 / 1, UK shipping ( 0.2 )
+1|10.00| 1 | UK 1 10.00
+3| 8.00 | 1 | UK 3 8.00
+3| 12.00 | 1 | UK 3 12.00 - expedited
+5|42.90|1 | UK 5 42.90
+6 | 41.00 | 1 | UK 6 41.00
+4 | 13. | 1 | UK 4 13.00
+2|15.90|1 | UK 2 15.90
+10|59.99|1 | 
+20|92.99|1 | UK 20 92.99
+30|120.00|1 | UK 30 120.00
+40|110.00|1 | UK 40 110.00
+50 | 109 | 1 | UK 50 109.00
+70 | 0 | 1 | Over 50 &lt;= 70 FREE
+80 | 999 | 1 | Over 70 - expensive
+100 | 0 | 1 | Over 80 - FREE again
+150 | 1.50 | 1 | Cheap shipping for over 100 kgs
+151 | X | 1 | Over 150 - too heavy
+0| 1.23 | 3
+0.8125| 14.95 | 3 | Steven Baker Canada
+2.8125 | 24.95 | 3 | Steven Baker Canada
+3 | 4.56 , 3
+4 | X | 3 | Cart weight exceeded. USA Canada limited to 3 kg
+0 | 0 | 1 | Nothing for FREE in UK
+1,2.78,1,myHermes ParcelShop
+2,3.78,1,myHermes ParcelShop
+5,5.79,1,myHermes ParcelShop
+10,7.49,1,myHermes ParcelShop
+15,9.78,1,myHermes Parcelshop
+0,1.23,UK, United Kingdom
+.1,6.45,1,Guaranteed by 1pm
+.5,7.25,1,Guaranteed by 1pm
+1,8.55,1,Guaranteed by 1pm
+2,11.00,1,Guaranteed by 1pm
+10,26.60,1,Guaranteed by 1pm
+20,41.20,1,Guaranteed by 1pm
