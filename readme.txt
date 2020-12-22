@@ -169,7 +169,7 @@ and [Multi rate weight/country shipping for WooCommerce FAQ's](https://www.oik-p
 
 == Upgrade Notice ==
 = 1.4.0 =
-This plugin is no longer supported. Please switch to oik-weight-zone-shipping.
+This plugin is no longer supported. Please switch to [oik-weight-zone-shipping](https://wordpress.org/plugins/oik-weight-zone-shipping).
 
 = 1.3.4 = 
 Tested with WordPress 4.7.3, WooCommerce 2.6.14 and WooCommerce 3.0 and PHP 7.1
