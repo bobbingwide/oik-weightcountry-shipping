@@ -3,8 +3,8 @@ Contributors: bobbingwide, vsgloik, Andy_P, pozhonks
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: woocommerce, commerce, ecommerce, shipping, weight, country, shop
 Requires at least: 3.9
-Tested up to: 5.7
-Stable tag: 1.4.0
+Tested up to: 6.0.1
+Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,58 +12,11 @@ Adds per-country and weight based shipping cost calculation method to your WooCo
 
 == Description ==
 
-This plugin is no longer supported.
 Please switch to [oik-weight-zone-shipping](https://wordpress.org/plugins/oik-weight-zone-shipping)
+as this plugin is integrated with Shipping Zones.
 
-
-If your WooCommerce store needs to calculate shipping charges based on cart weight and country of delivery 
-and you're still using WooCommerce 2.5 or earlier then this plugin is for you.
-
-You can group countries that share same delivery costs (e.g. USA and Canada, European Union countries, etc.) or 
-set the shipping costs on a per-country basis. 
-
-If you're using WooCommerce 2.6 or 3.0 you should use [Weight zone shipping for WooCommerce](https://wordpress.org/plugins/oik-weight-zone-shipping/) 
-as this is integrated with Shipping Zones. 
-
-
-
-= Features =
-New in version 1.3.2
- 
-* Russian language version
-
-New in version 1.3.1
-
-* Support for maximum cart weight 
-* French language version
-
-New in version 1.2
-
-* Ability to set zero cost shipping for certain weight ranges
-* No longer chooses the lowest rate from a higher weight range
-
-New in version 1.1
-
-* Enabled for localization in your language.
-* Tested with WooCommerce 2.3.8
-
-New in version 1.0.9 
-
-* Set the Shipping Method Title per Rate
-
-New in version 1.0.5
-
-* Supports carts with zero weight
-* Supports default rates when Country is not listed in a country group
-
-In version 1.0.4
-
-* Set multiple shipping rates based on cart weight and delivery country
-* Group countries sharing same rates and set rates once for all of them
-* Unlimited groups of countries
-* Unlimited rates
-* Works with WooCommmerce 2.0 and 2.1
-* Works on WPMS
+This oik Weight/Country Shipping for WooCommerce plugin is no longer supported. 
+Having said that, it has been tested with WordPress 6.0.1 and WooCommerce 6.8.0.
 
 = Known Limitations =
 
@@ -73,11 +26,6 @@ In version 1.0.4
 * Doesn't take into account dimensions
 * Only returns one shipping rate per weight/country group combination.
 
-For multiple shipping rates upgrade to [Multi rate weight/country shipping for WooCommerce plugin](https://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping-pro/)
-
-For WooCommerce 2.6 or 3.0 use either
-[Weight zone shipping for WooCommerce](https://wordpress.org/plugins/oik-weight-zone-shipping/)
-or [Multi rate weight zone shipping for WooCommerce](https://www.oik-plugins.com/oik-plugins/oik-weight-zone-shipping-pro/)
 
 = Documentation =
 
@@ -99,10 +47,6 @@ Country Groups are groups of countries (or a single country) that share same del
 1. Upload 'oik-weightcountry-shipping' to the '/wp-content/plugins/' directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Set your delivery rates in WooCommerce->Settings->Shipping using the Weight/Country tab
-
-= Which version of WooCommerce does this work on? =
-
-The latest version has been tested with both WooCommerce 2.5.5, WooCommerce 2.6.14, and WooCommerce 3.0.0
 
 
 = What is the separator for the shipping rate table? = 
@@ -139,27 +83,8 @@ If you want to use a different title per rate then add this for each rate where 
 
 = Does this support multiple rates per weight/country combination? =
 
-If you have a requirement to offer multiple shipping rates then we recommend using WooCommerce 2.6 with
+No. Use [Weight zone shipping for WooCommerce](https://wordpress.org/plugins/oik-weight-zone-shipping/).
 
-* [Weight zone shipping for WooCommerce 2.6](https://wordpress.org/plugins/oik-weight-zone-shipping/) - defining multiple shipping methods
-* [Multi rate weight zone shipping for WooCommerce 2.6](https://www.oik-plugins.com/oik-plugins/oik-weight-zone-shipping-pro/)
-
-If you're still using WooCommerce 2.5 you'll need:
-
-* [Multi rate weight/country shipping for WooCommerce plugin](https://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping-pro/)
-
-The Multi rate version supports multiple rates per weight/country combination e.g.
-
-`
-100 | 1.23 | 1 | UK standard
-100 | 2.34 | 1 | UK premium
-`
-
-
-= Are there any other FAQs? =
-
-Yes. See [oik weight/country shipping FAQS](https://www.oik-plugins.com/wordpress-plugins-from-oik-plugins/oik-weightcountry-shipping-faqs)
-and [Multi rate weight/country shipping for WooCommerce FAQ's](https://www.oik-plugins.com/oik-plugins/oik-weightcountry-shipping-pro/?oik-tab=faq)
 
 == Screenshots ==
 1. Weight and Country shipping settings part one
@@ -168,133 +93,13 @@ and [Multi rate weight/country shipping for WooCommerce FAQ's](https://www.oik-p
 4. Enable Shipping Debug Mode when modifying rates
 
 == Upgrade Notice ==
-= 1.4.0 =
+= 1.4.1 =
 This plugin is no longer supported. Please switch to [oik-weight-zone-shipping](https://wordpress.org/plugins/oik-weight-zone-shipping).
 
-= 1.3.4 = 
-Tested with WordPress 4.7.3, WooCommerce 2.6.14 and WooCommerce 3.0 and PHP 7.1
-
-= 1.3.3 = 
-Tested with WordPress 4.7 and WooCommerce 2.5.5 and 2.6.8. 
-
-= 1.3.2 =
-Contains a fix for Issue #6. Now tested with WooCommerce 2.4.11
-
-= 1.3.1 = 
-Upgrade to v1.3.1 for support for maximum cart weight or to use the French language version.
-
-= 1.3 =
-Upgrade to v1.3 if you get Notices due to missing Method title in rate line
-
-= 1.2 =
-Upgrade if v1.1 caused Fatal errors or if you want to set zero cost shipping for certain weight bands 
-
-= 1.1 =
-First version ready for localization. Sample bbboing language supported ( locale bb_BB )
-
-= 1.0.9 =
-Prototype version tested with WordPress 4.1 and WooCommerce 2.2.10 
-
-= 1.0.8 = 
-Tested with WordPress 4.1 and WooCommerce up to 2.2.10
-
-= 1.0.7 = 
-Tested with WordPress 4.0 and WooCommerce 2.2.4
-
-= 1.0.6 =
-Quick fix for sites where oik base plugin is loaded after oik-weightcountry-shipping
-
-= 1.0.5 =
-Tested with WooCommerce 2.1.7 and WordPress 3.9-RC1
-
-= 1.0.4 =
-Upgrade to resolve errors from missing bw_trace2() and bw_backtrace().
- 
-= 1.0.3 =
-Required for WooCommerce 2.1 and above. Tested with WooCommerce 2.0 and WooCommerce 2.1, up to WooCommerce 2.1.6.
-
-= 1.0.2b =
-Required for WooCommerce 2.1 and above. 
-
 == Changelog ==
-= 1.4.0 =
-* Changed: Added suggestion to switch to oik-weight-zone-shipping,[github bobbingwide oik issues 11]
-* Tested: With WordPress 5.6 and 5.7
-* Tested: With WooCommerce 4.8 to 5.1
-* Tested: With PHP 7.4 and 8.0
+= 1.4.1 =
+* Changed: Extracted much of readme.txt to changelog.txt. Removed some redundant references.
+* Tested: With WordPress 6.0.1 and WordPress Multi Site
+* Tested: With WooCommerce 6.8.0
+* Tested: With PHP 8.0
 * Tested: With PHPUnit 9
-
-= 1.3.4 = 
-* Tested: With WordPress 4.7.3 
-* Tested: With WooCommerce 2.5, 2.6 and 3.0
-* Tested: With PHP 7.1
-
-= 1.3.3 = 
-* Tested: With WordPress 4.7 and WooCommerce 2.5 and 2.6
-* Added: Russian language version. Unverified.
-* Changed: Updated readme to point you to Weight zone shipping for WooCommerce 2.6 
-
-= 1.3.2 = 
-* Fixed: Issue #6 - Correct dummy bw_trace2() function 
-* Tested: With WordPress 4.4 and WooCommerce 2.4.11
-
-= 1.3.1 = 
-* Added: Support for maximum cart weight
-* Added: French language version. Props to R&eacute;my Perona and WooCommerce
-* Changed: Now using semantic version numbering
-
-= 1.3 =
-* Fixed: Notice: Undefined offset from line 331 
-
-= 1.2 = 
-* Fixed: Responds to 'woocommerce_init' rather than 'init' 
-* Changed: Changed the pick_smallest_rate method to pick the rate for the given weight band.  
-
-= 1.1 =
-* Added: Responds to 'init' to load language versions and initialise the logic
-* Added: Sample language files for the bbboing language ( locale bb_BB )
- 
-= 1.0.9 =
-* Changed: Supports optional setting of the Method Title on each line in the shipping rate table
-
-= 1.0.8 = 
-* Changed: Supports separator characters of |=vertical bar, /=forward slash and/or ,=comma in the shipping rates table
-* Tested: With WordPress 4.1 and WooCommerce 2.2.10 
-
-= 1.0.7 = 
-* Changed: Support blanks in the shipping rates table 
-* Changed: Set text domain to "oik-weightcountry-shipping" instead of "woocommerce". No language versions yet.
-* Changed: Added some docblocks for API documentation
-* Tested: With WordPress 4.0 and WooCommmerce 2.2.4
-
-= 1.0.6 = 
-* Fixed: Remove dummy bw_trace2() and bw_backtrace() functions and calls.
-
-= 1.0.5 =
-* Changed: Calculates shipping charges for zero weight carts
-* Changed: Calculates charges for "any other country" using country group 0
-* Fixed: Should no longer produce Warning messages
-
-= 1.0.4 =
-* Fixed: Removed calls to trace functions: bw_trace2() and bw_backtrace().
-
-= 1.0.3 =
-* New: New version for delivery from oik-plugins.co.uk
-* Changed: Removed some links.
-* Changed: Fixed some PHP Notify messages.
-
-= 1.0.2b =
-* Version created by pozhonks.
-* See [New plugin for testing WooCommerce 2.1](https://wordpress.org/support/topic/new-plugin-for-testing-for-woocommerce-21) 
-
-= 1.0.1 =
-* Fixed a bug causing tax on shipping not being calculated
-* Fixed a bug causing delivery being displayed as free when a country was in allowed countries list, but no rate was specified for this country.
-* Fixed a bug causing delivery method being displayed to the user when no rate was specified for selected country of delivery
-* Fixed some typos
-* Changed some option labels to make them more clear
-
-= 1.0 =
-* First release
-
-
