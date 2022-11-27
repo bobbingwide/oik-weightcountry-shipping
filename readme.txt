@@ -3,7 +3,7 @@ Contributors: bobbingwide, vsgloik, Andy_P, pozhonks
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: woocommerce, commerce, ecommerce, shipping, weight, country, shop
 Requires at least: 3.9
-Tested up to: 6.0.1
+Tested up to: 6.1.1
 Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,7 +16,7 @@ Please switch to [oik-weight-zone-shipping](https://wordpress.org/plugins/oik-we
 as this plugin is integrated with Shipping Zones.
 
 This oik Weight/Country Shipping for WooCommerce plugin is no longer supported. 
-Having said that, it has been tested with WordPress 6.0.1 and WooCommerce 6.8.0.
+Having said that, it has been tested with WordPress 6.1.1 and WooCommerce 7.1.0.
 
 = Known Limitations =
 
