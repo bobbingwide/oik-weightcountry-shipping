@@ -9,8 +9,10 @@
  * License: GPL2
  * Text Domain: oik-weightcountry-shipping
  * Domain Path: /languages/
+ * WC requires at least: 2.6
+ * WC tested up to: 7.9.0
  
-    Copyright Bobbing Wide 2014-2022 ( email : herb@bobbingwide.com )
+    Copyright Bobbing Wide 2014-2023 ( email : herb@bobbingwide.com )
     Copyright 2012 andyswebdesign.ie 
 
     This program is free software; you can redistribute it and/or modify
