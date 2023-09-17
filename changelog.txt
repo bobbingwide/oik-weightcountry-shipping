@@ -40,6 +40,9 @@ In version 1.0.4
 
 
 == Upgrade Notice ==
+= 1.4.1 =
+This plugin is no longer supported. Please switch to [oik-weight-zone-shipping](https://wordpress.org/plugins/oik-weight-zone-shipping).
+
 = 1.4.0 =
 This plugin is no longer supported. Please switch to [oik-weight-zone-shipping](https://wordpress.org/plugins/oik-weight-zone-shipping).
 
@@ -89,6 +92,13 @@ Required for WooCommerce 2.1 and above. Tested with WooCommerce 2.0 and WooComme
 Required for WooCommerce 2.1 and above. 
 
 == Changelog ==
+= 1.4.1 =
+* Changed: Extracted much of readme.txt to changelog.txt. Removed some redundant references.
+* Tested: With WordPress 6.0.1 to 6.3 and WordPress Multi Site
+* Tested: With WooCommerce 6.8.0 to WooCommerce 7.9.0
+* Tested: With PHP 8.0
+* Tested: With PHPUnit 9
+
 = 1.4.0 =
 * Changed: Added suggestion to switch to oik-weight-zone-shipping,[github bobbingwide oik issues 11]
 * Tested: With WordPress 5.6 and 5.7

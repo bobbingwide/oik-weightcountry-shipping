@@ -3,8 +3,8 @@ Contributors: bobbingwide, vsgloik, Andy_P, pozhonks
 Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: woocommerce, commerce, ecommerce, shipping, weight, country, shop
 Requires at least: 3.9
-Tested up to: 6.3
-Stable tag: 1.4.1
+Tested up to: 6.3.1
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,13 +93,13 @@ No. Use [Weight zone shipping for WooCommerce](https://wordpress.org/plugins/oik
 4. Enable Shipping Debug Mode when modifying rates
 
 == Upgrade Notice ==
-= 1.4.1 =
+= 1.4.2 = 
 This plugin is no longer supported. Please switch to [oik-weight-zone-shipping](https://wordpress.org/plugins/oik-weight-zone-shipping).
 
 == Changelog ==
-= 1.4.1 =
-* Changed: Extracted much of readme.txt to changelog.txt. Removed some redundant references.
-* Tested: With WordPress 6.0.1 to 6.3 and WordPress Multi Site
-* Tested: With WooCommerce 6.8.0 to WooCommerce 7.9.0
-* Tested: With PHP 8.0
-* Tested: With PHPUnit 9
+= 1.4.2 =
+* Changed: Support PHP 8.2 #12 
+* Tested: With WordPress 6.3.1 and WordPress Multi Site
+* Tested: With WooCommerce 8.1.1
+* Tested: With PHP 8.2
+* Tested: With PHPUnit 9.6
