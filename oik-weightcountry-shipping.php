@@ -45,6 +45,7 @@ function init_oik_shipping() {
    * Implements shipping charges by weight and country
    *  
    */
+	#[\AllowDynamicProperties]
 	class OIK_Shipping extends WC_Shipping_Method {
   
   
