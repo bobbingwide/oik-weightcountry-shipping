@@ -1,4 +1,4 @@
-<?php // (C) Copyright Bobbing Wide 2017-2020
+<?php // (C) Copyright Bobbing Wide 2017-2020, 2023
 
 /**
  * @package oik-weightcountry-shipping
@@ -80,8 +80,8 @@ class Tests_calclate_shipping extends BW_UnitTestCase {
     $product = WC_Helper_Product::create_simple_product();
 		bw_trace2( $product, "product" );
 		// set_weight() is in 2.7.. which will become 3.0.0
-		//  $product->set_weight( 1.00 );
-		$product->weight = 1.0;
+		$product->set_weight( 1.00 );
+		//$product->weight = 1.0;
     WC()->cart->empty_cart();
     // Add the product to the cart. Methods returns boolean on failure, string on success.
     //WC()->cart->add_to_cart( 31631 /* $product->get_id(), 1 );
